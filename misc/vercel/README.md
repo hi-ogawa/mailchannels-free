@@ -4,8 +4,8 @@ misc script for vercel deployment
 
 ```sh
 # initial project setup
-vercel projects add vercel-server-build-hiro18181
-vercel link -p vercel-server-build-hiro18181
+vercel projects add mailchannels-free-hiro18181
+vercel link -p mailchannels-free-hiro18181
 ```
 
 ## references

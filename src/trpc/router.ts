@@ -1,3 +1,4 @@
+import { Z_MAILCHANNELS_INPUT, sendMail } from "../utils/mailchannels";
 import { trpcProcedureBuilder, trpcRouterFactory } from "./factory";
 
 export const trpcRouter = trpcRouterFactory({
@@ -10,4 +11,10 @@ export const trpcRouter = trpcRouterFactory({
       headers,
     };
   }),
+
+  sendMail: trpcProcedureBuilder
+    .input(Z_MAILCHANNELS_INPUT)
+    .mutation(({ input }) => {
+      return sendMail(input);
+    }),
 });
