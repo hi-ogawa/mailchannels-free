@@ -145,6 +145,7 @@ function Content() {
               "antd-btn antd-btn-primary p-1",
               sendMailMutation.isLoading && "antd-btn-loading"
             )}
+            disabled={sendMailMutation.isLoading}
           >
             Send
           </button>

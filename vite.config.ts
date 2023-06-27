@@ -1,3 +1,4 @@
+import importIndexHtmlPlugin from "@hiogawa/vite-import-index-html";
 import vaviteConnect from "@vavite/connect";
 import react from "@vitejs/plugin-react";
 import unocss from "unocss/vite";
@@ -7,6 +8,7 @@ export default defineConfig((ctx) => ({
   plugins: [
     unocss(),
     react(),
+    importIndexHtmlPlugin(),
     vaviteConnect({
       standalone: false,
       serveClientAssetsInDev: true,
@@ -19,9 +21,6 @@ export default defineConfig((ctx) => ({
   build: {
     outDir: ctx.ssrBuild ? "dist/server" : "dist/client",
     sourcemap: true,
-  },
-  ssr: {
-    noExternal: true,
   },
   clearScreen: false,
 }));
