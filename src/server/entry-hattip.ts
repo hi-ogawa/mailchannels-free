@@ -1,40 +1,23 @@
 import { RequestHandler, compose } from "@hattip/compose";
+import { importIndexHtml } from "@hiogawa/vite-import-index-html/dist/runtime";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { TRPC_ENDPOINT } from "../trpc/common";
 import { trpcRouter } from "../trpc/router";
 
 export function createHattipEntry() {
-  return compose(import.meta.env.DEV && devIndexHtmlHanlder(), trpcHanlder());
+  return compose(trpcHanlder(), indexHtmlHandler());
 }
 
 //
-// index.html for dev
+// index.html
 //
 
-function devIndexHtmlHanlder(): RequestHandler {
-  const INJECT_DEV_VITE_CLIENT = `
-<script type="module">
-  import RefreshRuntime from "/@react-refresh"
-  RefreshRuntime.injectIntoGlobalHook(window)
-  window.$RefreshReg$ = () => {}
-  window.$RefreshSig$ = () => (type) => type
-  window.__vite_plugin_react_preamble_installed__ = true
-</script>
-<script type="module" src="/@vite/client"></script>
-`;
-
-  return async (ctx) => {
-    if (ctx.url.pathname === "/") {
-      const indexHtml = await import("../../index.html?raw");
-      const indexHtmlDev = indexHtml.default.replace(
-        "<!-- INJECT_DEV_VITE_CLIENT -->",
-        INJECT_DEV_VITE_CLIENT
-      );
-      return new Response(indexHtmlDev, {
-        headers: [["content-type", "text/html"]],
-      });
-    }
-    return ctx.next();
+function indexHtmlHandler(): RequestHandler {
+  return async () => {
+    const html = await importIndexHtml();
+    return new Response(html, {
+      headers: [["content-type", "text/html"]],
+    });
   };
 }
 
