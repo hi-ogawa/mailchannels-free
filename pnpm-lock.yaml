@@ -18,8 +18,8 @@ devDependencies:
     specifier: 1.0.2-pre.1
     version: 1.0.2-pre.1(prettier@2.8.8)(typescript@5.1.3)
   '@hiogawa/tiny-rpc':
-    specifier: ^0.2.1
-    version: 0.2.1(zod@3.21.4)
+    specifier: ^0.2.2-pre.0
+    version: 0.2.2-pre.0(zod@3.21.4)
   '@hiogawa/unocss-preset-antd':
     specifier: 2.2.1-pre.3
     version: 2.2.1-pre.3(@unocss/preset-uno@0.53.1)(unocss@0.53.1)
@@ -770,8 +770,8 @@ packages:
       typescript: 5.1.3
     dev: true
 
-  /@hiogawa/tiny-rpc@0.2.1(zod@3.21.4):
-    resolution: {integrity: sha512-DSMJmuu+PodvXSqf7BwB75N3AeNAQqIqf/vQAcRX2CK5BJuZuge0veQUiqDKOyenhzZ51fred523lwdo8xkGQQ==}
+  /@hiogawa/tiny-rpc@0.2.2-pre.0(zod@3.21.4):
+    resolution: {integrity: sha512-lsNfswn2WxKs55oxcE6FgcdBBwdPLQhi664tO6DYNEWcAyI3SV3wpFIgG/hTVj7mhynIrObH319xdAwXPUOQ3A==}
     peerDependencies:
       zod: '*'
     peerDependenciesMeta:
