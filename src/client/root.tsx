@@ -2,7 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
-import { trpcClient } from "../trpc/client";
+import { rpcClient } from "../trpc/client";
 import { ReactQueryWrapper, cls } from "./misc";
 
 export function Root() {
@@ -48,7 +48,7 @@ function Content() {
   });
 
   const sendMailMutation = useMutation({
-    mutationFn: trpcClient.sendMail.mutate,
+    mutationFn: rpcClient.sendMail,
     onSuccess(data, _variables, _context) {
       if (data.ok) {
         toast.success("Successfully send an email");
