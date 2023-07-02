@@ -23,6 +23,7 @@
     "@hattip/adapter-node": "^0.0.34",
     "@hattip/adapter-vercel-edge": "^0.0.34",
     "@hattip/compose": "^0.0.34",
+    "@hattip/cors": "^0.0.34",
     "@hiogawa/isort-ts": "1.0.2-pre.1",
     "@hiogawa/tiny-rpc": "^0.2.2",
     "@hiogawa/unocss-preset-antd": "2.2.1-pre.3",
