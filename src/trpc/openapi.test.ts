@@ -17,7 +17,6 @@ describe("openapi", () => {
                 "content": {
                   "application/json": {
                     "schema": {
-                      "$schema": "http://json-schema.org/draft-07/schema#",
                       "additionalProperties": false,
                       "properties": {
                         "input": {
@@ -115,7 +114,6 @@ describe("openapi", () => {
                   "content": {
                     "application/json": {
                       "schema": {
-                        "$schema": "http://json-schema.org/draft-07/schema#",
                         "additionalProperties": false,
                         "properties": {
                           "output": {
@@ -147,7 +145,12 @@ describe("openapi", () => {
         },
         "servers": [
           {
-            "url": "http://localhost:5173/",
+            "description": "production",
+            "url": "https://mailchannels-free-hiro18181.vercel.app",
+          },
+          {
+            "description": "development",
+            "url": "http://localhost:5173",
           },
         ],
       }

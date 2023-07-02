@@ -30,7 +30,8 @@ export const openapiDocument: oas31.OpenAPIObject = {
           content: {
             "application/json": {
               schema: zodToJsonSchema(
-                z.object({ input: Z_MAILCHANNELS_INPUT })
+                z.object({ input: Z_MAILCHANNELS_INPUT }),
+                { target: "openApi3" }
               ) as any,
             },
           },
@@ -41,7 +42,8 @@ export const openapiDocument: oas31.OpenAPIObject = {
             content: {
               "application/json": {
                 schema: zodToJsonSchema(
-                  z.object({ output: Z_MAILCHANNELS_OUTPUT })
+                  z.object({ output: Z_MAILCHANNELS_OUTPUT }),
+                  { target: "openApi3" }
                 ) as any,
               },
             },
