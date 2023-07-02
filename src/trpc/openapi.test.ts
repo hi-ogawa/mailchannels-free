@@ -6,6 +6,7 @@ describe("openapi", () => {
     expect(openapiDocument).toMatchInlineSnapshot(`
       {
         "info": {
+          "description": "see also https://api.mailchannels.net/tx/v1/documentation",
           "title": "@hiogawa/cloudflare-mailchannels-example",
           "version": "0.0.0",
         },
@@ -27,6 +28,7 @@ describe("openapi", () => {
                                 "additionalProperties": false,
                                 "properties": {
                                   "type": {
+                                    "description": "e.g. text/plain",
                                     "type": "string",
                                   },
                                   "value": {

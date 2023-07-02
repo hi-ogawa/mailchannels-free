@@ -5,7 +5,7 @@ export const Z_MAILCHANNELS_INPUT = z.object({
   subject: z.string(),
   content: z
     .object({
-      type: z.string(),
+      type: z.string().describe("e.g. text/plain"),
       value: z.string(),
     })
     .array(),

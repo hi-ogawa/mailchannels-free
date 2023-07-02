@@ -12,6 +12,7 @@ export const openapiDocument: oas31.OpenAPIObject = {
   info: {
     title: packageJson.name,
     version: packageJson.version,
+    description: "see also https://api.mailchannels.net/tx/v1/documentation",
   },
   servers: [
     {
