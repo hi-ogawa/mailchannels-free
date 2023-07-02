@@ -5,7 +5,7 @@ export const Z_MAILCHANNELS_INPUT = z.object({
   subject: z.string(),
   content: z
     .object({
-      type: z.string(),
+      type: z.string().describe("e.g. text/plain"),
       value: z.string(),
     })
     .array(),
@@ -21,11 +21,13 @@ export const Z_MAILCHANNELS_INPUT = z.object({
           name: z.string(),
         })
         .array(),
-      dkim_domain: z.string().optional(),
-      dkim_private_key: z.string().optional(),
-      dkim_selector: z.string().optional(),
     })
     .array(),
+});
+
+export const Z_MAILCHANNELS_OUTPUT = z.object({
+  ok: z.boolean(),
+  value: z.unknown(),
 });
 
 const Z_MAILCHANNELS_ERROR_OUTPUT = z.object({
