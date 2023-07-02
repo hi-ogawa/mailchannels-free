@@ -1,9 +1,9 @@
-import { RequestHandler, compose } from "@hattip/compose";
+import { type RequestHandler, compose } from "@hattip/compose";
 import { importIndexHtml } from "@hiogawa/vite-import-index-html/dist/runtime";
-import { rpcHandler } from "../trpc/server";
+import { openapiDocumentHandler, rpcHandler } from "../trpc/server";
 
 export function createHattipEntry() {
-  return compose(rpcHandler(), indexHtmlHandler());
+  return compose(openapiDocumentHandler(), rpcHandler(), indexHtmlHandler());
 }
 
 //
